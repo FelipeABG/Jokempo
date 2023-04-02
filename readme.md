@@ -26,4 +26,3 @@ nas entregas para avaliar o domínio de cada estudante. Em caso de cópia ou pl�
 atribuída a atividade será zero.
 
 8. Data de Entrega: 14/08/2022 no CANVAS.
-Atividade somativa

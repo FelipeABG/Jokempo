@@ -51,21 +51,34 @@ def empate():
 def erro():
     print('''        ---------------JoKenPo---------------
             Opção inválida!''')
-
+def final():
+    print(f'''        ---------------JoKenPo---------------
+            O placar final foi: Jogador 1 - {PlacarP1} x {PlacarP2} - Jogador 2.
+            Obrigado por jogar!
+            Feito por:
+            -Felipe Augusto.
+            -Giuseppe Bruno.
+            -Evandro Diniz.
+            -Johan Stromberg.
+            -André Eller.''')
+    
 PlacarP1 = 0
 PlacarP2= 0
-menu = 0
 
 jogo = ['Pedra', 'Papel', 'Tesoura']
 Continuar = ['S', 'N']
 
-while menu <1 or menu >3:
+while True:
     menu = int(input('''        ---------------JoKenPo---------------
             Este jogo oferece 3 modos de jogo:
             1 - Jogador vs jogador
             2 - Jogador vs computador
             3 - Computador vs computador
             Selecione qual modo deseja jogar: '''))
+    if menu in [1, 2, 3]:
+        break
+    else:
+        erro()
 
 if menu == 1:
     while True:
@@ -108,8 +121,7 @@ if menu == 1:
             else:
                 erro()
         if ContinuarJogando == 'N':
-            print('''        ---------------JoKenPo---------------
-                Obrigado por jogar!''')
+            final()
             break 
 if menu == 2:
     while True:
@@ -147,8 +159,7 @@ if menu == 2:
             else:
                 erro()
         if ContinuarJogando == 'N':
-            print('''        ---------------JoKenPo---------------
-                Obrigado por jogar!''')
+            final()
             break
 if menu == 3:
     while True:
@@ -176,6 +187,5 @@ if menu == 3:
             else:
                 erro()
         if ContinuarJogando == 'N':
-            print('''        ---------------JoKenPo---------------
-                Obrigado por jogar!''')
+            final()
             break
