@@ -55,7 +55,7 @@ def empate():
             logo, houve empate!
             Placar: Jogador 1 - {PlacarP1} x {PlacarP2} - Jogador 2''')
 def erro():
-    print('''       \33[31m' ---------------JoKenPo---------------
+    print('''       \33[31m ---------------JoKenPo---------------
             Opção inválida! Tente novamente.\33[m''')
 def final():
     print(f'''        ---------------JoKenPo---------------
