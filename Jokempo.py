@@ -1,12 +1,11 @@
-import random  #Aleatoriza a escolha do computador.
-import pwinput #Esconde o input do jogador.
+import random  
+import pwinput 
 
 PlacarP1 = 0
 PlacarP2= 0
 
 jogo = ['Pedra', 'Papel', 'Tesoura']
 Continuar = ['S', 'N']
-
 
 def VitoriaPC1():
     global PlacarP1
@@ -68,7 +67,6 @@ def final():
             -Johan Stromberg.
             -André Eller.''')
     
-
 while True:
     menu = int(input('''        ---------------JoKenPo---------------
             Este jogo oferece 3 modos de jogo:
