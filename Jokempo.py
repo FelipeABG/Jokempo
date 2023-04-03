@@ -1,6 +1,12 @@
 import random 
 import pwinput
 
+PlacarP1 = 0
+PlacarP2= 0
+
+jogo = ['Pedra', 'Papel', 'Tesoura']
+Continuar = ['S', 'N']
+
 
 def VitoriaPC1():
     global PlacarP1
@@ -49,8 +55,8 @@ def empate():
             logo, houve empate!
             Placar: Jogador 1 - {PlacarP1} x {PlacarP2} - Jogador 2''')
 def erro():
-    print('''        ---------------JoKenPo---------------
-            Opção inválida!''')
+    print('''       \33[31m' ---------------JoKenPo---------------
+            Opção inválida! Tente novamente.\33[m''')
 def final():
     print(f'''        ---------------JoKenPo---------------
             O placar final foi: Jogador 1 - {PlacarP1} x {PlacarP2} - Jogador 2.
@@ -62,11 +68,6 @@ def final():
             -Johan Stromberg.
             -André Eller.''')
     
-PlacarP1 = 0
-PlacarP2= 0
-
-jogo = ['Pedra', 'Papel', 'Tesoura']
-Continuar = ['S', 'N']
 
 while True:
     menu = int(input('''        ---------------JoKenPo---------------
@@ -99,20 +100,16 @@ if menu == 1:
                 break
             else:
                 erro()
-        if Player1 == 'Pedra' and Player2 == 'Tesoura':
+        if Player1 == Player2:
+            empate
+        elif Player1 == 'Pedra' and Player2 == 'Tesoura':
             VitoriaP1()
-        elif Player1 == 'Pedra' and Player2 == 'Papel':
-            VitoriaP2()
-        elif Player1 == 'Papel' and Player2 == 'Pedra':
+        elif Player1 == 'papel' and Player2 == 'Pedra':
             VitoriaP1()
-        elif Player1 == 'Papel' and Player2 == 'Tesoura':
-            VitoriaP2()
         elif Player1 == 'Tesoura' and Player2 == 'Papel':
             VitoriaP1()
-        elif Player1 == 'Tesoura' and Player2 == 'Pedra':
+        else:
             VitoriaP2()
-        elif Player1 == Player2:
-            empate()
         while True:
             ContinuarJogando = input('''        ---------------JoKenPo---------------
             Deseja continuar jogando [S/N]? ''').capitalize()
@@ -137,20 +134,16 @@ if menu == 2:
             else:
                 erro()
         Player2 = random.choice(jogo)
-        if Player1 == 'Pedra' and Player2 == 'Tesoura':
-            VitoriaP1()
-        elif Player1 == 'Pedra' and Player2 == 'Papel':
-            VitoriaPC()
+        if Player1 == Player2:
+            empate()
         elif Player1 == 'Papel' and Player2 == 'Pedra':
             VitoriaP1()
-        elif Player1 == 'Papel' and Player2 == 'Tesoura':
-            VitoriaPC()
         elif Player1 == 'Tesoura' and Player2 == 'Papel':
             VitoriaP1()
-        elif Player1 == 'Tesoura' and Player2 == 'Pedra':
-            VitoriaPC()
+        elif Player1 == 'Pedra' and Player2 == 'Tesoura':
+            VitoriaP1()
         else:
-            empate()
+            VitoriaPC()
         while True:
             ContinuarJogando = input('''        ---------------JoKenPo---------------
             Deseja continuar jogando [S/N]? ''').capitalize()
@@ -165,20 +158,16 @@ if menu == 3:
     while True:
         Player1 = random.choice(jogo)
         Player2 = random.choice(jogo)
-        if Player1 == 'Pedra' and Player2 == 'Tesoura':
-            VitoriaPC1()
-        elif Player1 == 'Pedra' and Player2 == 'Papel':
-            VitoriaPC2()
+        if Player1 == Player2:
+            empate()
         elif Player1 == 'Papel' and Player2 == 'Pedra':
             VitoriaPC1()
-        elif Player1 == 'Papel' and Player2 == 'Tesoura':
-            VitoriaPC2()
         elif Player1 == 'Tesoura' and Player2 == 'Papel':
             VitoriaPC1()
-        elif Player1 == 'Tesoura' and Player2 == 'Pedra':
-            VitoriaPC2()
+        elif Player1 == 'Pedra' and Player2 == 'Tesoura':
+            VitoriaPC1()
         else:
-            empate()
+            VitoriaPC2()
         while True:
             ContinuarJogando = input('''        ---------------JoKenPo---------------
             Deseja continuar jogando [S/N]? ''').capitalize()
