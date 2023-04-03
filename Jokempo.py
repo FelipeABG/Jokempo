@@ -1,5 +1,5 @@
-import random 
-import pwinput
+import random  #Aleatoriza a escolha do computador.
+import pwinput #Esconde o input do jogador.
 
 PlacarP1 = 0
 PlacarP2= 0
