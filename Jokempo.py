@@ -1,8 +1,7 @@
 import random  
 import pwinput 
 
-PlacarP1 = 0
-PlacarP2= 0
+PlacarP1 = PlacarP2 = 0
 
 jogo = ['Pedra', 'Papel', 'Tesoura']
 Continuar = ['S', 'N']
