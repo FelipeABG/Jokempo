@@ -53,8 +53,7 @@ def empate():
             logo, houve empate!
             Placar: Jogador 1 - {PlacarP1} x {PlacarP2} - Jogador 2''')
 def erro():
-    print('''       \33[31m ---------------JoKenPo---------------
-            Opção inválida! Tente novamente.\33[m''')
+    print('''       \33[31m Opção inválida! Tente novamente.\33[m''')
 def final():
     print(f'''        ---------------JoKenPo---------------
             O placar final foi: Jogador 1 - {PlacarP1} x {PlacarP2} - Jogador 2.
@@ -67,41 +66,46 @@ def final():
             -André Eller.''')
     
 while True:
-    menu = int(input('''        ---------------JoKenPo---------------
+    menu = input('''        ---------------JoKenPo---------------
             Este jogo oferece 3 modos de jogo:
             1 - Jogador vs jogador
             2 - Jogador vs computador
             3 - Computador vs computador
-            Selecione qual modo deseja jogar: '''))
-    if menu in [1, 2, 3]:
+            Selecione qual modo deseja jogar: ''')
+    if menu in ['1', '2', '3']:
         break
     else:
         erro()
 
-if menu == 1:
+if menu == '1':
     while True:
         while True:
             Player1 = pwinput.pwinput('''        ---------------JoKenPo---------------
-            Entre as opções:
-            -Pedra
-            -Papel
-            -Tesoura
-            Jogador 1, escolha sua jogada: ''').capitalize()
+                Entre as opções:
+                -Pedra
+                -Papel
+                -Tesoura
+                Jogador 1, escolha sua jogada: ''').capitalize()
+            if Player1 in jogo:
+                break
+            else:
+                erro()
+        while True:
             Player2 = pwinput.pwinput('''        ---------------JoKenPo---------------
-            Entre as opções:
-            -Pedra
-            -Papel
-            -Tesoura
-            Jogador 2, escolha sua jogada: ''').capitalize()
-            if Player1 in jogo and Player2 in jogo:
+                Entre as opções:
+                -Pedra
+                -Papel
+                -Tesoura
+                Jogador 2, escolha sua jogada: ''').capitalize()
+            if Player2 in jogo:
                 break
             else:
                 erro()
         if Player1 == Player2:
-            empate
+            empate()
         elif Player1 == 'Pedra' and Player2 == 'Tesoura':
             VitoriaP1()
-        elif Player1 == 'papel' and Player2 == 'Pedra':
+        elif Player1 == 'Papel' and Player2 == 'Pedra':
             VitoriaP1()
         elif Player1 == 'Tesoura' and Player2 == 'Papel':
             VitoriaP1()
@@ -116,11 +120,11 @@ if menu == 1:
                 erro()
         if ContinuarJogando == 'N':
             final()
-            break 
-if menu == 2:
+            break   
+if menu == '2':
     while True:
         while True:
-            Player1 = pwinput.pwinput('''        ---------------JoKenPo---------------
+            Player1 = input('''        ---------------JoKenPo---------------
             Entre as opções:
             -Pedra
             -Papel
@@ -151,7 +155,7 @@ if menu == 2:
         if ContinuarJogando == 'N':
             final()
             break
-if menu == 3:
+if menu == '3':
     while True:
         Player1 = random.choice(jogo)
         Player2 = random.choice(jogo)
