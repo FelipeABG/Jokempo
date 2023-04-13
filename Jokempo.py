@@ -1,11 +1,14 @@
-import random  
-import pwinput 
+import random  # Aleatoriza as escolhas do computador.
+import pwinput # Censura o input dos jogadores.
 
+#Contadores do placar.
 PlacarP1 = PlacarP2 = 0
 
+#Listas.
 jogo = ['Pedra', 'Papel', 'Tesoura']
 Continuar = ['S', 'N']
 
+#Funçoes de print e contadores.
 def VitoriaPC1():
     global PlacarP1
     PlacarP1 += 1
@@ -63,8 +66,9 @@ def final():
             -Giuseppe Bruno.
             -Evandro Diniz.
             -Johan Stromberg.
-            -André Eller.''')
-    
+            -André Eller.''')  
+
+#Bloco de código responsável pelo menu.
 while True:
     menu = input('''        ---------------JoKenPo---------------
             Este jogo oferece 3 modos de jogo:
@@ -77,6 +81,7 @@ while True:
     else:
         erro()
 
+#Blocos de código responsáveis pelo jogo em si.
 if menu == '1':
     while True:
         while True:
